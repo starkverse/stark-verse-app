@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-white text-base bg-[#1D161F];
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.feature-border {
+  background: linear-gradient(270deg,#e929ba00,#e929ba99,#5468ffcc,#5468ff00);
+}
+
+.Toastify__toast {
+  @apply backdrop-blur !bg-opacity-80 !bg-[#1f223d];
+}
