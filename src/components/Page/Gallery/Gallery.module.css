@@ -1,0 +1,29 @@
+.item {
+  a {
+    img {
+      @apply transition-all;
+      transition-duration: 500ms;
+    }
+    button {
+      @apply hidden;
+    }
+  }
+  &:hover {
+    > a {
+      img {
+        @apply opacity-50 scale-110;
+      }
+      button {
+        @apply !block;
+      }
+    }
+  }
+}
+
+.bg {
+  @apply bg-gray-800 relative h-48 overflow-hidden;
+  background-image: url('/banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}

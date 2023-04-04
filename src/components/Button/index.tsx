@@ -13,7 +13,7 @@ const Button = ({ disabled, children, type = 'default', size='md', className = '
   }
   return (
     <button onClick={doClick} {...props} className={classNames(`${className} inline-flex items-center rounded-md border py-2`, {
-      'bg-primary border-primary hover:bg-primary-500 transition-all': type === 'primary',
+      'bg-primary border-primary hover:bg-primary-500 hover:border-primary-500 transition-all': type === 'primary',
       'border-primary hover:bg-primary hover:border-primary-500 transition-all': type === 'primary-out',
       'border-gray-700 hover:border-primary hover:bg-primary': type === 'default',
       'px-4 text-sm': size === 'md',

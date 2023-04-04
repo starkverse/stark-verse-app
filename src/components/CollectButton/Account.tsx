@@ -1,28 +1,30 @@
-import { ArrowRightOnRectangleIcon, RectangleGroupIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
+import { ArrowRightOnRectangleIcon, BanknotesIcon } from '@heroicons/react/24/outline';
 import { formatStr } from '@/utils/util';
 import Menu from '../Menu';
-import { useConnectors } from '@starknet-react/core';
-import { toast } from 'react-toastify';
+import { AccountContext } from '../AccountProvider';
 
 const Account = ({ address, chainId }: any) => {
-  const { disconnect } = useConnectors();
+  const { push } = useRouter();
+  const { disconnect } = useContext(AccountContext);
   const goVerse = () => {
-    toast.info('Coming Soon.', { icon: false });
+    push('/gallery');
   }
   const formatChainId = (val = '') => {
-    return val.slice(3);
+    return val.slice(3).toLowerCase();
   }
   return (
     <Menu 
       title={<div>
-        {formatChainId(chainId)}
+        <span className='capitalize'>{formatChainId(chainId)}</span>
         <span className='mx-2'>|</span>
         {formatStr({ value: address })}
       </div>}
       navs={[
         {
-          label: 'Verse',
-          icon: <RectangleGroupIcon width={20} />,
+          label: 'StarkVerse Gallery',
+          icon: <BanknotesIcon width={20} />,
           onClick: goVerse,
         },
         {

@@ -20,7 +20,7 @@ const Features = () => {
     <section className="body-font" id="map">
       <div className="relative container px-5 py-24 mx-auto">
         <h1 className="sm:text-3xl text-2xl font-medium title-font text-center  mb-2">
-          Road Map
+          RoadMap
         </h1>
         <div className="feature-border translate-y-4 absolute left-1/2 h-[1px] w-3/4 max-w-[640px] -translate-x-1/2 sm:w-full" />
         <div className="absolute top-0 left-1/2 -z-10 flex -translate-x-1/2 items-center justify-center">

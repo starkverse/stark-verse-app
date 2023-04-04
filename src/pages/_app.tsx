@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { StarknetConfig, InjectedConnector } from '@starknet-react/core';
+import Basic from '@/components/BasicLayout';
+import { AccountProvider } from '@/components/AccountProvider';
 
 export default function App({ Component, pageProps }: AppProps) {
   const connectors = [
@@ -18,10 +20,14 @@ export default function App({ Component, pageProps }: AppProps) {
     });
   }, []);
   return <StarknetConfig connectors={connectors}>
-    <Component {...pageProps} />
+    <AccountProvider>
+      <Basic>
+        <Component {...pageProps} />
+      </Basic>
+    </AccountProvider>
     <ToastContainer
       position="top-right"
-      autoClose={5000}
+      autoClose={4000}
       hideProgressBar
       newestOnTop={false}
       closeOnClick

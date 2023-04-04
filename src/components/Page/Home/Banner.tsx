@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+import { useContext } from "react";
+import { AccountContext } from "@/components/AccountProvider";
 import styles from "./Home.module.css";
-import Button from "../Button";
+import Button from "../../Button";
 import MintButton from "./MintButton";
 
 const Banner = () => {
+  const { push } = useRouter();
+  const { address } = useContext(AccountContext);
   const doClick = () => {
-    toast.info('Coming soon.', { icon: false });
+    if (!address) {
+      toast.info("Please connect wallet.");
+    } else {
+      push('/gallery');
+    }
   }
   return (
     <section className={styles.bg} id='home'>

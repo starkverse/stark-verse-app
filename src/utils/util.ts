@@ -1,5 +1,5 @@
 export const formatStr = ({
-  value,
+  value = '',
   len = 4,
 }: any) => {
   const l = value.length;

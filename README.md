@@ -15,7 +15,7 @@ Users can establish connections with other users on the platform, share their th
 #### Customizable gallery
 In the future, StarkVerse may provide customizable gallery and modeling functions. Art professionals and modelers can use this feature to design their own galleries, invite others to visit, and expand their social presence.
 
-### Road Map
+### RoadMap
 
 #### Phase One: Create Personal Galleries
 Build a platform to provide a showcase for digital artwork
