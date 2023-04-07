@@ -4,6 +4,7 @@ import { ArrowRightOnRectangleIcon, BanknotesIcon } from '@heroicons/react/24/ou
 import { formatStr } from '@/utils/util';
 import Menu from '../Menu';
 import { AccountContext } from '../AccountProvider';
+import { contractMap } from '../Page/Home/MintButton';
 
 const Account = ({ address, chainId }: any) => {
   const { push } = useRouter();
@@ -12,7 +13,8 @@ const Account = ({ address, chainId }: any) => {
     push('/gallery');
   }
   const formatChainId = (val = '') => {
-    return val.slice(3).toLowerCase();
+    const v = contractMap[val]?.network || '';
+    return v.slice(0, v.indexOf('-'));
   }
   return (
     <Menu 

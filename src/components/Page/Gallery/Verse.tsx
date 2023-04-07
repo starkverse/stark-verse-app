@@ -8,7 +8,7 @@ import { get } from "lodash";
 
 const GalleryBanner = () => {
   const { connector } = useContext(AccountContext);
-  const chainId: any = get(connector, '_wallet.chainId');
+  const chainId: any = get(connector, '_wallet.account.chainId', "");
   return (
     <section className="max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-6 -translate-y-6 px-4">
       <div className={`rounded-xl overflow-hidden relative shadow ${styles.item}`}>

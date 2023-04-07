@@ -7,12 +7,12 @@ import abi from "@/common/abi.json";
 import Button from "../../Button";
 
 export const contractMap: any = {
-  'SN_MAIN': {
+  '0x534e5f4d41494e': {
     network: 'mainnet-alpha',
     contractAddress: '0x060582df2cd4ad2c988b11fdede5c43f56a432e895df255ccd1af129160044b8',
     scanUrl: 'https://mintsquare.io/collection/starknet/',
   },
-  SN_GOERLI: {
+  '0x534e5f474f45524c49': {
     network: "goerli-alpha",
     contractAddress:
       "0x075cca7baf8b5985c16a44092c492c28f76e2c617324dc0ab7d1d499c5d47161",
@@ -27,14 +27,10 @@ const CollectButton = () => {
       if (!address) {
         throw Error("Please connect wallet.");
       }
-      const chainId: any = get(connector, "_wallet.chainId", "");
+      const chainId: any = get(connector, '_wallet.account.chainId', "");
       const chain = contractMap[chainId];
       if (!chain) {
-        if(chainId === 'SN_MAIN') {
-          throw Error("Unsupported network.");
-        } else {
-          throw Error("Unsupported network.");
-        }
+        throw Error("Unsupported network.");
       }
       const provider = new Provider({ sequencer: { network: chain.network } });
       const contract = new Contract(abi, chain.contractAddress, provider);
