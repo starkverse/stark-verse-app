@@ -4,8 +4,10 @@ Welcome to StarkVerse, the ultimate destination for showcasing and exchanging di
 We provide a very cool platform for collectors, art enthusiasts, and art professionals to freely showcase, communicate, and appreciate NFT artworks.
 
 ### Features
+
 #### Creating a gallery
 Users can create their own galleries by minting StarkVerse NFTs on our platform and displaying their owned NFTs within.
+
 #### Art exhibition
 Art enthusiasts and professionals can create and manage their own galleries on the platform to showcase their works and skills, attract the attention of other users, and engage in exchange.
 
